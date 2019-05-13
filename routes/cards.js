@@ -3,6 +3,15 @@ const router = express.Router();
 const { data } = require('../data/flashcards.json');
 const { cards } = data;
 
+router.get('/', (req, res) => {
+  function randNumGen (max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
+
+  const randomID = randNumGen(cards.length - 1);
+  res.redirect(`/cards/${randomID}?side=question`);
+});
+
 router.get('/:id', (req, res) => {
   const { side } = req.query;
   const { id } = req.params;
