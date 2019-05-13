@@ -49,7 +49,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Express Flashcards Screen Shot][product-screenshot]]()
+[![Express Flashcards Screen Shot][product-screenshot]](https://github.com/othneildrew/Express-Flashcards)
 
 This project is intended to practice and demonstrate the use of Node.js and Express as part of Treehouse's [Full Stack JavaScript Techdegree](https://join.teamtreehouse.com/full-stack-javascript-techdegree).
 
