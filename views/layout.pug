@@ -1,8 +1,15 @@
 doctype html
-html(lang="en")
+html(lang='en')
   head
-    title Express Flashcards
+    link(rel='stylesheet', type='text/css', href='/static/css/style.css')
+    title Express Flashcards - An App To Help You Study!
 body
   include _includes/header.pug
+  if name
+    section(class='namecard')
+      div(class='namecard-hello')
+        p(class='namecard-greeting') Welcome, #{name}!
+        form(action='/logout', method='post', class='namecard-exit')
+          button(type='submit')
+            img(src='/static/img/close.svg')
   block content
-  include _includes/footer.pug

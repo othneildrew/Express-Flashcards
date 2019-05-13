@@ -1,10 +1,18 @@
 extends layout
     
 block content
-  section#content
-    h2= text
-    if hint
-      p
-        i Hint: #{hint}
-    p
-      a(href=`${link}`) Flip Card
+  section(class='flashcards')
+    div(class=`card card-${title.toLowerCase()}`)
+      div(class='card-header')
+      h1(class='card-title')= title
+      div#content
+        h2= text
+        if hint
+          p#hint
+            i Hint: #{hint}
+      div(class='card-flip-wrap')
+        a(href=`${link}`, class='card-flip')
+          img(src='/static/img/flip.svg')
+      div(class='card-next')
+        a(href='/cards')
+          img(src='/static/img/next.svg')

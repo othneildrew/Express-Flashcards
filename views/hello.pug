@@ -1,8 +1,11 @@
 extends layout
 
 block content
-  h2 Let's get started!
-  form(action='/hello', method='post')
-    label Please enter your name
-      input(type='text', name='username', id='name-input')
-    button(type='submit') Submit
+  section(class='namecard')
+    div(class='namecard-hello')
+      p(class='namecard-greeting') Hello, student!
+    form(action='/hello', method='post', class='namecard-form')  
+      label(class='namecard-prompt') Please enter your name:
+      input(class='namecard-name', type='text', name='username')
+      |
+      button(class='namecard-submit', type='submit') Submit

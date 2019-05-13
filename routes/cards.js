@@ -15,18 +15,26 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   const { side } = req.query;
   const { id } = req.params;
+
+  if (!side) {
+    return res.redirect(`/cards/${id}?side=question`);
+  }
+
+  //TODO: add error handling for queries where side !== 'question' || side !== 'answer'
+
+  const name = req.cookies.username;
   const text = cards[id][side];
   const { hint } = cards[id];
   const { link } = cards[id];
 
-  const templateData = { text };
+  const templateData = { text, name };
 
   if (side === 'question') {
+    templateData.title = 'Question';
     templateData.hint = hint;
     templateData.link = `/cards/${id}?side=answer`;
-  }
-
-  if (side === 'answer') {
+  } else if (side === 'answer') {
+    templateData.title = 'Answer';
     templateData.link = `/cards/${id}?side=question`;
   }
 

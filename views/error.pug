@@ -1,6 +1,12 @@
 extends layout
 
 block content
-  h1= error.message
-  h2= error.status
-  pre= error.stack
+  section(class='desk')
+    h1= `${error.message} - Status: ${error.status}`
+    img(src='/static/img/desk.svg', class='desk-items')
+    a(class='button-primary-small', href='/') Go Home
+    div(class='paper')
+      pre(class='stack-trace')= error.stack
+    div(class='tear')
+  
+  
