@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h2 Let's get started!
+  form(action='/hello', method='post')
+    label Please enter your name
+      input(type='text', name='username', id='name-input')
+    button(type='submit') Submit

@@ -1,13 +1,8 @@
-extends layout.pug
+extends layout
 
 block content
-  div.container
-    h1 Welcome to Express Flashcards
-    p Lorem ipsum dolor sit amet consectetur adipiscing elit tempor, justo potenti ullamcorper venenatis fermentum luctus blandit habitant dignissim, ligula rutrum per est ut facilisi iaculis. Mollis eget fusce lacus montes himenaeos nibh ligula aliquet neque magnis, habitant mattis cum viverra nostra id odio primis ut porta, purus habitasse lectus nisi blandit pellentesque penatibus eros sem. Inceptos turpis ultricies lacinia sagittis hac quis porttitor sociis ultrices pulvinar, pharetra dictum elementum etiam tellus himenaeos risus orci magnis.
-
-    p Sapien scelerisque ligula auctor penatibus morbi, class vulputate hendrerit diam nec parturient, ultrices fames vehicula quam. Habitant pulvinar tincidunt vel lobortis netus vivamus molestie ligula fringilla, maecenas magna cum facilisis accumsan elementum gravida mattis eu, sollicitudin primis porta iaculis magnis aliquam fames sed. Dapibus mollis dignissim neque eget maecenas diam, luctus venenatis ornare praesent hac, ullamcorper taciti cursus facilisi ante metus, sociis molestie parturient tempor.
-    
-    ul
-      li First item
-      li Second item
-      li Third item
+  h2 Welcome #{name}!
+  form(action='/logout', method='post')
+    button(type='submit') Log Out
+  
+  
